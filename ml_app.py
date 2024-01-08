@@ -4,6 +4,7 @@ import streamlit as st
 # Load ML Packages
 import joblib
 import os
+import sklearn
 
 # Load EDA Packages
 import numpy as np

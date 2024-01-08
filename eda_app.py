@@ -18,6 +18,7 @@ import plotly.express as px
 def load_data(data):
     df = pd.read_csv(data)
     return df
+
 def run_eda_app():
     st.subheader("From Exploratory Data Analysis")
     # df = pd.read_csv("data/diabetes_data_upload.csv")
@@ -68,7 +69,7 @@ def run_eda_app():
 
             with st.expander("Dist Plot of Class"):
                 fig = plt.figure()
-                sns.countplot(df, x='26. At present are you suffering from any kind of depression?')
+                sns.countplot(data=df, x='26. At present are you suffering from any kind of depression?')
                 st.pyplot(fig)
 
         with col2:
@@ -86,7 +87,7 @@ def run_eda_app():
         # Outlier Detection
         with st.expander("Outlier Detection Plot"):
             fig = plt.figure()
-            sns.boxplot(df_cleaned, x='2._what_is_your_age?')
+            sns.boxplot(data = df_cleaned, x='2._what_is_your_age?')
             st.pyplot(fig)
 
             p3 = px.box(df_cleaned, x='2._what_is_your_age?', color='1._what_is_your_gender?_')
