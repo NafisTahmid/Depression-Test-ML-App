@@ -3,6 +3,7 @@ import streamlit as st
 
 # Loading EDA Packages
 import pandas as pd
+import sklearn
 
 # Load Data Visualization Package
 import matplotlib.pyplot as plt
