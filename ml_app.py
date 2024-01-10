@@ -199,7 +199,7 @@ def run_ml_app():
         # st.write(prediction)
         # st.write(predict_prob)
 
-        if prediction == 1:
+        if prediction == 0:
             st.warning("Positive Risk {}".format(prediction[0]))
             pred_probability_score = {"Negative DM Risk": predict_prob[0][0]*100,
                                       "Positive DM Risk": predict_prob[0][1]*100}
