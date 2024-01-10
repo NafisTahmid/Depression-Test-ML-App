@@ -15,7 +15,7 @@ import plotly.express as px
 
 # Load Data
 
-@st.cache_resource
+# @st.cache_resource
 def load_data(data):
     df = pd.read_csv(data)
     return df

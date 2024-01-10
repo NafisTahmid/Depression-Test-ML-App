@@ -70,7 +70,7 @@ def get_value(val, my_dict):
             return value
 
 # Load ML Models
-@st._cache_data
+# @st._cache_data
 def load_model(model_file):
     loaded_model = joblib.load(open(os.path.join(model_file), "rb"))
     return loaded_model
@@ -199,7 +199,7 @@ def run_ml_app():
         # st.write(prediction)
         # st.write(predict_prob)
 
-        if prediction == 0:
+        if prediction == 1:
             st.warning("Positive Risk {}".format(prediction[0]))
             pred_probability_score = {"Negative DM Risk": predict_prob[0][0]*100,
                                       "Positive DM Risk": predict_prob[0][1]*100}
