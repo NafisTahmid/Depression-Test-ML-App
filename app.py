@@ -6,6 +6,7 @@ import streamlit.components.v1 as stc
 from eda_app import run_eda_app
 from ml_app import run_ml_app
 
+st.set_page_config(page_title="Depression Test for University Students", page_icon='images/897242_brain_mind_thinking_train_icon.png')
 
 html_temp = """
            <div style="background-color:#3872fb;padding:10px;border-radius:10px">
@@ -39,6 +40,43 @@ def main():
         run_ml_app()
     else:
         st.subheader("About")
+        st.markdown("#### Supervisor")
+        st.text("""
+                MD. Shahriar Rahman Rana
+                Lecturer
+                Department of Computer Science and Engineering
+                BRAC University
+                """)
+        st.markdown("#### Co-Supervisor")
+        st.text("""
+                Rafeed Rahman
+                Lecturer
+                Department of Computer Science and Engineering
+                BRAC University
+                """)
+
+        st.markdown("#### Students")
+        st.text("""
+                    Khondokar Jamal E Mustafa
+                    ID: 19241008
+                    Email: khondokar.jamal.e.mustafa@g.bracu.ac.bd
+                """)
+        st.text("""
+                Syed Aref Ahmed 
+                ID: 19201124
+                Email:syed.aref.ahmed@g.bracu.ac.bd
+                """)
+        st.text("""
+                Ibtesum Arif 
+                ID:19201054
+                Email:ibtesum.arif@g.bracu.ac.bd
+                """)
+        st.text("""
+                MD. Nafis Tahmid 
+                ID:19301053
+                Email:md.nafis.tahmid@g.bracu.ac.bd
+                """)
+
         
         
         
