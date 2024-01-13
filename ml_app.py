@@ -184,6 +184,9 @@ def run_ml_app():
             elif i in ["Disappointed", "Not satisfied", "Satisfied", "Very satisfied"]:
                 res = get_value(i, social_life_satisfaction_map)
                 encoded_result.append(res)
+            elif i in ['18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '30', '30+']:
+                res = get_value(i, age_map)
+                encoded_result.append(res)
             else:
                 encoded_result.append(get_fvalue(i))
 
@@ -191,15 +194,18 @@ def run_ml_app():
 
     with st.expander("Prediction Result:"):
         single_sample = np.array(encoded_result).reshape(1, -1)
-        # st.write(single_sample)
+       
 
-        model = load_model("models/depression_dataset_trained_model_updated.sav")
+        model = load_model("models/depression_dataset_trained_model_new.sav")
+       
+
         prediction = model.predict(single_sample)
+
         predict_prob = model.predict_proba(single_sample)
         # st.write(prediction)
         # st.write(predict_prob)
 
-        if prediction == 0:
+        if prediction == 1:
             st.warning("Positive Risk {}".format(prediction[0]))
             pred_probability_score = {"Negative DM Risk": predict_prob[0][0]*100,
                                       "Positive DM Risk": predict_prob[0][1]*100}
